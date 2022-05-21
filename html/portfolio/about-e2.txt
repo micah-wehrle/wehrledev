@@ -1,0 +1,27 @@
+The programming language I have the most experience with is called "Expression 2", and I bet you've never heard of it. Though incredibly obscure, after 1000+ hours of playing around with it, I can say that it is simultaniously incredibly fun to code in, uniquely challenging, but also a great envionment to learn to program.
+
+What is E2?
+
+In <year> valve released Half Life 2 in the Source Engine, which has realistic physics simulations and the ability to be easily modified. Soon after, a guy named Garry released a game called Garry's Mod, which was just the Source Engine as a true sandbox game. There are no rules or goals, the player can just mess around in the physics engine and make fun contraprions with the various models from any of Valve's Source Engine games.
+
+The game is desgined for players to be able to mod (the mod), so it was only a matter of time before "wiremod" was released. This allowed players to spawn logic gates, and wire them together to create even more intricate contraptions. The mod also had an "Expression" gate, whcih allowed the user to write a few lines of code that could be executed by the gate. Even though it had very simple syntax and limited functionality, it was very powerful, and was eventually succeeded by Expression 2.
+
+The new and improved Expression 2 hoasted a full in-game IDE, which allowed the user to create complex scripts that took advantage of every aspect of the physics engine. E2 can spawn objects, manipulate them, read data from them, and do just about anything else you'd want from a programming language.
+
+Once wiremod added an "Expression Graphics Processor", and a "Digital Screen" which could be manipulated by Expression 2, the stage was set for me (and loads of other users) to be able to put together awesome in-game creations.
+
+Why is E2 so great?
+
+The best part about Expression 2 is that the code can be written while playing the game, and immediately "spawned" into the world. If playing on a public server with other players, they too can see the Expression 2 gate spawned, and enjoy (or be terrorized) by whatever it is programmed to do. If you find yourself in a friendly community, you can walk up to another player and show off what you've made or ask for help with a particular bug.
+
+The ability to create physicsless holograms, draw shapes and graphics on an EGP, or manipulate the pixels on a digital screen allows for the user to make virtually anything they can dream up. And that's exactly what I've done.
+
+Why is E2 a unique (and in some respects challenging) language to use?
+
+The biggest hurdle to using Expression 2 is the limitation that comes with creating scripts that execute only on the game server. To simplify the processing of the scripts, the entire code must be completely executed within a single game update tick. Because of this, infinite loops hault execution, and even very long loops and computations can exceed the alloted quota for the E2 each game tick. 
+
+Because of this, one has to be creative and design more unorthadox frameworks in order to create complex programs. My longest E2 is over 4000 lines of code in a single script, so a lot of thought had to go into not exceeding the processing quota alloted by the server. Remember, the entire program needs to be executed. Essentially, if the interpreter (E2s are not compliled) does not reach the very end of the code document each game tick, the E2 gate will crash.
+
+What have I made?
+
+The creations I'm the most proud of are a Microsoft Paint clone, a command line terminal loaded with several games and commands, and a pleothora of hologram-based creations such as a ball with simulated physics, a miniature town simulator, and a program which simulates a hole cut through a solid object.
