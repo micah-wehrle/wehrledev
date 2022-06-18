@@ -1,0 +1,15 @@
+{
+    "e2files": [
+        {
+            "name:": "MayOS v2",
+            "parseVersion": "0"
+        },
+        {
+            "name": "gm_paint",
+            "parseVersion": "0"
+        }
+    ],
+    "javaFiles": [
+        
+    ]
+}
