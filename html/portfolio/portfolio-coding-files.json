@@ -1,0 +1,19 @@
+{
+    "e2files": [
+        {
+            "displayName": "MayOS v2",
+            "rawFileName": "MayOS v2.txt",
+            "htmlFileName": "mayosv2.html",
+            "parseVersion": "0"
+        },
+        {
+            "displayName": "gm_paint",
+            "rawFileName": "gm_paint.txt",
+            "htmlFileName": "gm_paint.html",
+            "parseVersion": "0"
+        }
+    ],
+    "javaFiles": [
+        
+    ]
+}
