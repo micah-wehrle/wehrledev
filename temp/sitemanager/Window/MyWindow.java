@@ -10,6 +10,8 @@ import java.awt.event.WindowEvent;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import temp.sitemanager.Parsers;
+
 
 public class MyWindow {
 
@@ -36,6 +38,14 @@ public class MyWindow {
 
 
     public MyWindow() {
+
+        System.out.println("Test: " + "test".contains("es"));
+
+        System.out.println(Parsers.e2Parse("TestE2.txt", "Test file"));
+
+
+
+
         frame = new JFrame("Wehrle Website Manager");
 
         frame.setResizable(false);

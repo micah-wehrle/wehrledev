@@ -1,0 +1,21 @@
+@name Test
+@persist Info:string
+
+if(first()) {
+	for(I = 1, 10) {
+		Info = I + ": " I*2
+
+		if(I == 5) {
+			break
+		}
+	}
+
+	# What am I even doing?
+
+}
+
+#[ " " testing
+This really should be
+]# A = 1 #interesting!
+
+owner():applyForce(vec(0, 0, 10000))

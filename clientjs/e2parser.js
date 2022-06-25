@@ -19,7 +19,29 @@ var path = window.location.pathname;
 var page = path.split('/').pop().replace('.html','');
 
 var txtFull = `		
-		
+@name Test
+@persist Info:string
+
+if(first()) {
+	for(I = 1, 10) {
+		Info = I + ": " I*2
+
+		if(I == 5) {
+			break
+		}
+	}
+
+	# What am I even doing?
+
+}
+
+#[ " " testing
+This really should be
+]# A = 1 #interesting!
+
+owner():applyForce(vec(0, 0, 10000))
+
+
 `;
 //fetch("e2.txt")
 //	.then(response => response.text())
@@ -170,7 +192,7 @@ while(i < txtFull.length) {
 			inType = "space"
 		}
 		line++;
-		html += `</span></div><div><span class="nl">${line}| &nbsp;</span><span class="${inType}">`;
+		html += `</span></div>\n<div><span class="nl">${line}| &nbsp;</span><span class="${inType}">`;
 	}
 	else { 
 		var charFit = charFitsCurType(thisChar, inType);

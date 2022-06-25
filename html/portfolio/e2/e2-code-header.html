@@ -1,0 +1,105 @@
+<!--
+
+The top portion of this html file is a prewritten file that is then merged with a generated html file to display the syntax
+highlighting for a specific language
+
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>!!FILENAME</title>
+        <style type="text/css">
+			/* https://github.com/shadowscion/Expression2-Sublime/blob/master/Expression2.tmTheme */
+			body,
+            div {
+                margin: 0;
+                padding: 0;
+            }
+            
+            body {
+                overflow: hidden;
+                width: 100%;
+                height: 100%;
+
+				
+			}
+
+            #header {
+                overflow: auto;
+                position: absolute;
+                width: 100%;
+                height: 100px;
+
+                background-color: black;
+                color: white;
+            }
+            
+            #main {
+                font-family:'Courier New',monospace;
+				width: max-width;
+                white-space: nowrap;
+
+                overflow: auto;
+                position: absolute;
+                /*  width: 100%; */
+                top: 100px;
+                bottom: 0;
+            }
+
+			.condition {
+				color: #a0f0f0
+			}
+			.directive { 
+				color: #f0f0a0
+			}
+			.string {
+				color: #808080
+			}
+			.number {
+				color: #f0a0a0
+			}
+			.comment {
+				color: #808080
+			}
+			.mlcomment {
+				color: #808080
+			}
+			.variable {
+				color: #a0f0a0
+			}
+			.function {
+				color: #a0a0f0
+			}
+			.symbol {
+				color: #e0e0e0
+			}
+			.space {
+				color: #FF00FF
+			}
+			.type {
+				color: #a0a0f0; /* #f0a060 */
+			}
+			.bg {
+				background-color: #1a1a1a;
+			}
+			.nl {
+				color: #FFFFFF
+			}
+		</style>
+    </head>
+
+    <body>
+        <div id="header">
+            !!FILENAME<br>
+            by Micah Wehrle<br>
+            When? Who knows..<br><br>
+        </div>
+        <div id="main">
+
+!!BODY
+
+        </div>
+
+    </body>
+</html>
