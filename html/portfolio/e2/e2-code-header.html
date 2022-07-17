@@ -11,42 +11,13 @@ highlighting for a specific language
         <title>!!FILENAME</title>
         <style type="text/css">
 			/* https://github.com/shadowscion/Expression2-Sublime/blob/master/Expression2.tmTheme */
-			body,
-            div {
-                margin: 0;
-                padding: 0;
-            }
-            
-            body {
-                overflow: hidden;
-                width: 100%;
-                height: 100%;
-
-				
-			}
-
-            #header {
-                overflow: auto;
-                position: absolute;
-                width: 100%;
-                height: 100px;
-
-                background-color: black;
-                color: white;
-            }
-            
-            #main {
-                font-family:'Courier New',monospace;
+			body {
+				font-family:'Courier New',monospace;
 				width: max-width;
-                white-space: nowrap;
-
-                overflow: auto;
-                position: absolute;
-                /*  width: 100%; */
-                top: 100px;
-                bottom: 0;
-            }
-
+			}
+			div {
+				white-space: nowrap;
+			}
 			.condition {
 				color: #a0f0f0
 			}
@@ -75,31 +46,34 @@ highlighting for a specific language
 				color: #e0e0e0
 			}
 			.space {
-				color: #FF00FF
+				color: #FF00FF /* means that something is wrong! */
 			}
 			.type {
-				color: #a0a0f0; /* #f0a060 */
+				color: #f0a060; /* #f0a060  for some reason I have it set to a0a0f0*/
 			}
 			.bg {
 				background-color: #1a1a1a;
+				line-height: 0.7;
 			}
 			.nl {
 				color: #FFFFFF
 			}
-		</style>
+        </style>
     </head>
 
-    <body>
-        <div id="header">
-            !!FILENAME<br>
-            by Micah Wehrle<br>
-            When? Who knows..<br><br>
-        </div>
-        <div id="main">
+    <body class="bg">
+
+<!--
+The following section was generated using a text to html parser, which takes the E2 code and stylizes it into html so it will
+look better on a webpage.
+-->
 
 !!BODY
 
-        </div>
+<!--
+The remainder of the document is part of the base header template
+-->
+
 
     </body>
 </html>

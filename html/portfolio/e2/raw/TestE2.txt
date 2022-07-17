@@ -1,16 +1,36 @@
+#WELCOME 
+
+
 @name Test
-@persist Info:string
+@persist Info:string # string should be orange
+
+Var[1,test] test:test Test:test test
+
+# the following should be equally spaced.
+
+    thing1
+	thing2
+        thing1
+		thing2
+
+
+test test  test   test
+test test test test
+
+
 
 if(first()) {
-	for(I = 1, 10) {
-		Info = I + ": " I*2
+    for(I = 1, 10) {
+        Info = I + ": " I*2
+        
+        File[1, number] = 1 # number here should be orange too
 
-		if(I == 5) {
-			break
-		}
-	}
+        if(I == 5) {
+            break
+        }
+    }
 
-	# What am I even doing?
+    # What am I even doing?
 
 }
 
@@ -19,3 +39,29 @@ This really should be
 ]# A = 1 #interesting!
 
 owner():applyForce(vec(0, 0, 10000))
+
+ #[
+This
+Literally
+Is 
+Just
+
+
+
+
+
+
+For 
+
+Spacing
+
+
+
+
+
+
+
+
+
+purposes!
+]#
