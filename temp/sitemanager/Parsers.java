@@ -1,15 +1,8 @@
 package temp.sitemanager;
 
-import java.io.File; 
-import java.io.FileNotFoundException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.Scanner; 
+
 
 public abstract class Parsers {
-
-    public static final String E2_HEADER_PATH = "/e2/e2-code-header.html";
-    public static final String LOAD_ERROR_PREFIX = "!!";
 
     public static final int E2_VER = 1;
 
@@ -17,77 +10,7 @@ public abstract class Parsers {
     private static final String PAGE_BODY = "!!BODY";
 
 
-    // General function to load a file and return it as a single string
-    private static String loadFile(String filePath) {
-
-        String outputFile = "";
-
-        // Verify filePath starts with a '/'
-        if(filePath.charAt(0) != '/') {
-            filePath = "/" + filePath;
-        }
-
-        try {
-
-            // Load file from current directory
-            //TODO Create standardized file paths in one location to allow for possible file system restructure
-            File file = new File(System.getProperty("user.dir") + "/html/portfolio" + filePath);
-            //System.out.println("Attempting to load file from path " + file.getPath());
-
-            Scanner reader = new Scanner(file);
-            while (reader.hasNextLine()) { 
-                // Compile file into a single string
-                outputFile = outputFile + reader.nextLine() + "\n";
-            }
-            reader.close();
-
-        } 
-        catch (FileNotFoundException e) {
-
-            // Print issue if file isn't found, and add specific prefix to output string 
-            System.err.println("Unable to load file: " + filePath);
-            outputFile = LOAD_ERROR_PREFIX + " ERROR LOADING FILE FROM INPUT:\n" + filePath;
-            e.printStackTrace();
-        }
-        
-        return outputFile;
-            
-    }
-
-    // Write files into the current file system
-    public static void writeFile(String filePathAndName, String contents) {
-
-        // Makes sure path begins with a /
-        if(filePathAndName.charAt(0) != '/') {
-            filePathAndName = "/" + filePathAndName;
-        }
-
-        // Sets up to find included 
-        String[] namePieces = filePathAndName.split("\\.");
-        String[] acceptableEndings = {"txt", "html"};
-
-        if(namePieces.length == 1) {
-            filePathAndName = filePathAndName + ".txt";
-            System.out.println("here");
-        } 
-        else if(!Util.stringArrayContains(acceptableEndings, namePieces[namePieces.length-1])) {
-            System.out.println("Unacceptable file type: ." +namePieces[namePieces.length-1]);
-            filePathAndName = filePathAndName.substring(0, filePathAndName.length() - namePieces[namePieces.length-1].length()) + "txt";
-            System.out.println("Updated file path to: " + filePathAndName);
-        }
-
-        
-
-        try {
-            Files.write(Paths.get(System.getProperty("user.dir") + filePathAndName), contents.getBytes());
-        }
-        catch(Exception e) {
-            System.err.println("Error writing file: " + filePathAndName);
-            e.printStackTrace();
-        }
-
-        
-    }
+    
     
 
     // The following functions are specific parsers for different languages and their private functions
@@ -96,7 +19,41 @@ public abstract class Parsers {
 
     // Based on the first letter of a new word/number in E2, identifies what group it is in
     private static String e2FirstOfType(String cha) {
+
+        switch(cha) {
+            case " ":
+                return "space";
+            
+            case "@":
+                return "directive";
+
+            case "#":
+                return "comment";
+
+            case "\"":
+                return "string";
+
+            case "\t":
+                return "tab";
+            
+            default:
+                if("!$%^&*()+=]}[{|:<>,?-".contains(cha)) {
+                    return "symbol";
+                }
+                else if(Character.isDigit(cha.charAt(0))) {
+                    return "number";
+                }
+                else if(Character.isLetter(cha.charAt(0))) { //special variable starters?
+
+                    return cha.toLowerCase().equals(cha) ? "function" : "variable";
+                }
+
+                return "space";
+
+            
+        }
         
+        /* 
         if(cha.equals(" ")) {
             return "space";
         }
@@ -129,6 +86,8 @@ public abstract class Parsers {
 
         
         return "space";
+
+        */
     }
 
     // Based on the given character in E2, determines if it fits in the current group for syntax color
@@ -214,15 +173,15 @@ public abstract class Parsers {
     // Parse an E2 text file into highlighted html
     public static String e2ParseV1(String filePath, String fileName) { //TODO Add more passed info such as date created and such (what else?)
 
-        String finalhtml = loadFile(E2_HEADER_PATH);
+        String finalhtml = FileManager.loadFile(FileManager.E2_HEADER_PATH);
 
         // Verify the file is not an errored file
-        if(finalhtml.substring(0,2) != LOAD_ERROR_PREFIX) {
+        if(finalhtml.substring(0,2) != FileManager.LOAD_ERROR_PREFIX) {
 
             // Update details on the html header with info relevant to this E2
             finalhtml = finalhtml.replace(PAGE_FILENAME, fileName);
 
-            String file = loadFile("/e2/raw/" + filePath);
+            String file = FileManager.loadFile(FileManager.PORTFOLIO_PATH + "/e2/raw/" + filePath);
             String html = "<div><span class=\"space\">";
             String inType = "space";
             boolean inArray = false;
@@ -446,6 +405,10 @@ public abstract class Parsers {
 
         return finalhtml;
     }
-        
+    
+
+    
+
+
     
 }
