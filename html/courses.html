@@ -1,0 +1,44 @@
+<!-- This document largely guided by Udemy JS course by Brad Traversy. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- style from: https://materializecss.com/getting-started.html -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Couldn't find this file online in a way I trusted so yoinked it from the video -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <title>Task List</title>
+</head>
+<body>
+    <h1 style="color:#303030;font-size:50;font-family:'Courier New',monospace;padding-left:50px;font-weight:bold"><a href="../index.html" style="color:#303030">wehrle.dev</a></h1>
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <div id="main" class="card">
+                    <div class="card-content">
+                        <span class="card-title">Projects created through the Javascript udemy course:</span>
+                        <div class="row">
+                            <div class="project-card col s12">
+                                <!-- <span class="project-title">Task Manager</span> -->
+                                <a href="courses/task-manager.html" class="open-proj btn green">Task Manager</a>
+                                <a href="courses/loan-calculator.html" class="open-proj btn green">Loan Calculator</a>
+                                <!-- <a href="courses/task-manager.html" class="open-proj btn green">Task Manager</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div id="closing-note">This is project one for the udemy javascript course by Brad Traversy </div> -->
+    </div>
+
+    <!-- This taken from following link, must be above materialize script. link: https://releases.jquery.com -->
+    <script   src="https://code.jquery.com/jquery-3.6.0.js"   integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="   crossorigin="anonymous"></script>
+    <!-- This also taken from materialize url above -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="task-app.js"></script>
+</body>
+</html>

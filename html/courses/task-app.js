@@ -2,7 +2,7 @@
 
     This script was largely designed by Brad from the Udemy JS course, but I took the liberty of adding the following:
 
-    A few custom alerts, such as blocking duplicate tasks from being added, and adding additional info to them such as number of tasks being deleted.
+    A few custom alerts, such as blocking duplicate tasks from being added, and adding additional info to the clear all alert such as number of tasks being deleted.
     I also coded most of the local storage section before watching the video. I don't love the way he did it, and admittedly mine isn't ideal either.
         I would prefer to have more dedicated functions that could be called -- I hate copying and pasting my own code. You should write it once and put it in a function if it needs to be called again (like how the create li element code is repeated in the add task button event and also when the DOM loads and the tasks are pulled from storage).
         For the purpose of this site I sort of just went with the simplest option. If you (whoever you are) want me to redesign this script to be more efficent as described above I would be happy to do so, thanks.
