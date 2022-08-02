@@ -12,6 +12,8 @@
 
     I had to watch video in order to make actual loan calculator
 
+    Everything was working prior to watching js part of the video. I added some stuff to pretty it up after watching (really error message box was the only improvement taken from the video)
+
     As I watched the video of him making script, I took notes about what he did differently.
     (I should note he gave a disclaimer at the beginning of the course he wouldn't always do things in the best practice. He said do things simply and beginner-friendly. So my criticisms are only of the program, not of his decision code in such a way)
 
@@ -120,9 +122,9 @@ function calculateLoan(e) {
                     
                     // In the event that something broke such as x = 1, ensure output is not 1/0 and if not drop an error
                     if(isFinite(monthly)) {
-                        monthlyPayment.value = '$'+monthly.toFixed(2);
-                        totalPayment.value = '$'+(monthly*calculatedPayments).toFixed(2);
-                        totalInterest.value = '$'+(monthly*calculatedPayments - principal).toFixed(2);
+                        monthlyPayment.value = fancifyMoneyNumber(monthly); 
+                        totalPayment.value = fancifyMoneyNumber(monthly*calculatedPayments); 
+                        totalInterest.value = fancifyMoneyNumber(monthly*calculatedPayments - principal); 
                     }
                     else {
                         showError('Error in calculation, please verify numbers enterred are correct.', 5000);
@@ -252,8 +254,31 @@ function cleanNumberStr(str) {
     return str.trim().replaceAll(',','');
 }
 
+// Fancy up a number to a dollar amount
+function fancifyMoneyNumber(num) {
+    // Grab just the last 3 digits ( .XX )
+    let decimal = num.toFixed(2);
+    decimal = decimal.substring(decimal.length-3, decimal.length);
+
+    // Grab the number without the decimal
+    let whole = '' + Math.floor(num);
+    let newWhole = ''; // ha...
+
+    if(whole.length > 4) { // ignore 4 digit numbers and below
+        for(let i = 0; i < whole.length; i++) {
+            // Grab the numbers from the end, and every third insert a comma
+            newWhole = whole[whole.length-i-1] + (i != 0 && i%3 == 0 ? ',' : '') + newWhole;
+        }
+    }
+    else {
+        newWhole = whole;
+    }
+
+    return '$' + newWhole + decimal;
+}
+
 // Draw the loading icon on the canvas.
-// Don't tell anyone but I probably spent more time on this than everything above
+// Don't tell anyone but I probably spent just as much time on this as anything above
 // I have quite a bit of experience with this kind of stuff. I know it's largely not practical, I guess I'm just showing off what I can do with shape and color manipulation.
 function draw() {
 
