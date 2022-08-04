@@ -152,7 +152,7 @@ function calculateLoan(e) {
         showError("Please ensure all three forms are populated before submitting.", 3000);
     }
 
-    e.preventDefault();
+    e.preventDefault(); 
 }
 
 // This specific function was created while watching the video
