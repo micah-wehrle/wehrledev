@@ -14,6 +14,14 @@
     I would like to add something to keep track of total wins and losses, but I can't really add anything to the html as I am working on this without internet, so the style sheet doesn't load.
     
     I may make tweaks as I watch the videos. I will document any thoughts and changes as I watch:
+        I did not notify the player of the correct number if those. I will implement that now. I also decided to add clues, so it will tell you to guess higher or lower to make it a bit easier to play.
+        Brad started declaring variables using a single let/const and then separating by commas. In personal practice I don't love this idea, but I will use it if instructed to do so. I feel it makes the processs of editing the variables such as adding or removing a little less intuitive.
+        Again, in the first project, Brad used a function to add all the event listeners. This time I called it init(), and he didn't again this time. I think I'm going to stop?
+        He created the guess minimum as a variable as well, but I decided to avoid doing that. It could easily be added. It seemed silly to have a guessing game that didn't start at 1.
+        Brad converted the input from a string to a number. I decided not to, as I didn't think it would really be necessary. I used the "soft" comparisons, such as '1' == 1. I don't know if this is considered bad practice.
+        Ha! We both independantly created a function called setMessage(message, color) to set the text and its color for the message below the submission field.
+        Brad has disabled the input after the game is over, and converted the submit button to a play again button. I did not consider doing this in my design, but I think I'll leave it how mine is.
+            In seeing this, I also learned that I don't need to do the "onclick" element for the three buttons, I could have just done e.target. I will leave it as it is, but I now see that as a preferable design choice and will be using that in the future.
 
 */
 
@@ -56,7 +64,7 @@ function init() { // Still not sure if it's good practice to put these bad boys 
     // Create Event Listeners
     submissionForm.addEventListener('submit', guessed);
     difficultyForm.addEventListener('submit', setDifficulty);
-    heading.addEventListener('click', shootConfetti);
+    heading.addEventListener('mousedown', shootConfetti);
 
     resetSubmissionForm(); // Make sure everything is clean at the start
 }
@@ -117,12 +125,12 @@ function guessed(e) {
                 }
                 else {
                     if(guesses >= settings.guessNumbers[difficulty]) { // too many guesses for the difficulty
-                        setMessage('You lose! Please play again for some of that sweet, sweet dopamine.' + (difficulty !== 'easy' ? ' Maybe try a lower difficulty.' : ''), 'red');
+                        setMessage(`You lose! The correct number was ${answer}. Guess again to start a new round.` + (difficulty !== 'easy' ? ' Maybe try a lower difficulty.' : ''), 'red');
                         submissionBox.style.borderColor = 'red';
                         gameEnded = true; // so we know to reset everything on the next guess. wait I just wrote this
                     }
                     else {
-                        setMessage(`Wrong! Remaining guesses: ${settings.guessNumbers[difficulty] - guesses}`, 'black'); // in the case the guess is legal but wrong
+                        setMessage(`Wrong! Try guessing ${guess > answer ? 'lower' : 'higher'}. Remaining guesses: ${settings.guessNumbers[difficulty] - guesses}`, 'black'); // in the case the guess is legal but wrong
                     }
                 }
 
@@ -173,6 +181,8 @@ function setMessage(text, color) {
 // Create canvas context
 const canvas = document.getElementById('canvas')
 const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth; 
+canvas.height = window.innerHeight;
 
 let drawing = false; // For stopping the self-reference of the draw() function
 let conf = []; // confetti array
@@ -180,7 +190,7 @@ let conf = []; // confetti array
 // Settings for confetti
 const confCount = 300;
 const drag = 0.9;
-const grav = 0.8;
+const grav = 0.2;
 const drift = 0.3;
 const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
 const confSizeMin = 5;
@@ -191,7 +201,7 @@ function shootConfetti() {
     if(!drawing) { // in case somehow the user triggers confetti again before it's finished animating
         drawing = true; // enable drawing "loop"
 
-        canvas.width = window.innerWidth; // ensure canvas is correct size when ready to shoot, in case it was resized after page loadd
+        canvas.width = window.innerWidth; // ensure canvas is correct size when ready to shoot, in case it was resized after page load
         canvas.height = window.innerHeight;
         canvas.style.visibility = 'visible';
 
@@ -224,7 +234,7 @@ function simConfetti(i) {
     conf[i].velX *= drag; // edit the x and y velocities based on drag 
     conf[i].velX += drift * (Math.round(Math.random()*2) - 1); // drift is made either + or -, which makes them flutter side to side nicely
     conf[i].velY *= drag;
-    conf[i].velY += grav; // gravity is applied to make them fall down (or up, as lower on the screen is higher Y value)
+    conf[i].velY += grav*(1+conf[i].size*0.5); // gravity is applied to make them fall down (or up, as lower on the screen is higher Y value)
 }
 
 function draw() {
@@ -250,3 +260,10 @@ function draw() {
     }
 
 }
+
+/*
+    Some canvas notes:
+    https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations
+    https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillStyle
+    https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arc
+*/
