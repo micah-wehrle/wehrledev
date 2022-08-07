@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="orbit-style.css">
+    
+    <title>Orbit Class Demonstration</title>
+</head>
+<body>
+    <h1>Class Practice - Floating Bodies</h1>
+    <div style="align-content: center;">
+            <canvas id="canvas" width="500" height="500" style="float:left; padding-right:15px"></canvas>
+            <div>
+                <h2 style="margin-top:0">About</h2>
+                <p>
+                    Other than janky physics simulation, I created this to practice making classes and appling them. I also really like playing with cavases, so it was an excuse to do that as well.
+                    This also was my first time trying to use my own css style sheet and play around with buttons and a lot of other html/css designs.<br><br>Please do note that I haven't properly coded collisions yet, if it detects two touching it just inverts the velocity.
+                </p>
+                <h2>Settings</h2>
+                <table class="sub-table">
+                    <tr>
+                        <th class="sub-head">General</th>
+                        <th class="sub-head">New Body</th>
+                    </tr>
+                    <tr>
+                        <td class="sub-cell">
+                            <input type="button" value="Physics" id="physics" onclick="toggleBtn(this);" class="toggle-btn" title="Enable/disable the physics simulation">
+                            <input type="button" value="Show Velocity" id="showVel" onclick="toggleBtn(this);" class="toggle-btn" title="Draw a line to show the direction and magnitute of the body's velocity">
+                            <br>
+                            <input type="button" value="Default Bodies" id="default" onclick="triggerBtn(this);" class="trigger-btn" title="Clear all bodies and insert the default body layout">
+                            <input type="button" value="Clear" id="clear" onclick="triggerBtn(this);" class="trigger-btn" title="Clear all bodies">
+                        </td>
+                        <td class="sub-cell">
+                            <table>
+                                <tr>
+                                    <td style="display:flex; align-items:center; align-content:flex-start; flex-direction:column; justify-content:center;">
+                                        <p style="margin:0; padding:0;">Body color:</p>
+                                        <input type="color" id="body-color-picker" class="color-picker" value="#990000">
+                                        <input type="button" value="Random Color" id="randColor" onclick="toggleBtn(this);" class="toggle-btn btn-small enabled" title="Randomly select the body's color"> 
+                                    </td>
+                                    <td>
+                                        <input type="button" value="Static" id="isStatic" onclick="toggleBtn(this);" class="toggle-btn" title="Make new balls static">
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+    </div>
+    <script src="orbit-app.js"></script>
+</body>
+</html>
