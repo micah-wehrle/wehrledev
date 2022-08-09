@@ -1,0 +1,45 @@
+<!-- This document largely guided by Udemy JS course by Brad Traversy. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="courses-style.css">
+    
+    <title>Task List</title>
+
+</head>
+<body>
+    <div class="content">
+        <div class="header-box">
+            <h1><a href="../index.html" style="text-decoration:none; color:#303030;">wehrle.dev</a></h1>
+            <h3>Project List</h3>
+        </div>
+        <div>
+            <table id="project-table">
+                <tr class="table-header" id="project-table-header">
+                    <th style="margin:0; padding:0;">
+                        <input type="button" id="sort-btn" value="&#x25B2;" onclick="switchOrder();">
+                    </th>
+                    <th>Name</th>
+                    <th>Created</th>
+                    <th>Tags</th>
+                    <td id="ignore-click"></td> <!-- No idea why this works. When I make it a th it breaks everything-->
+                </tr>
+            </table>
+        </div>
+        <div class="info-box" id="info-box-wrapper" hidden>
+            <div>
+                <h4 class="float-left">about:</h4>
+                <input type="button" id="close-info-btn" class="btn-x float-right" value="X" onclick="clearSelectedRow()">
+            </div>
+            <p id="info-text"></p>
+            <input type="button" id="view-project-btn" class="btn btn-view-project" value="View Project&#x2002;&#x2002;&#8680;" onclick="openProject(-1)">
+        </div>
+    </div>
+
+    <script src="courses-app.js"></script>
+</body>
+</html>

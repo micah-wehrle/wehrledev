@@ -10,6 +10,12 @@
     
     Since it's all working how I want, I will watch his conversion to ES6 video as well as his storage feature video
     Here are my thoughts and changes:
+    
+        Ha! He just copied and pasted too
+        Funny we also independantly created a separate class to handle storage.
+        I did not know about DOMContentLoaded event listener so I added that portion as well
+        I'm not going to mess with adding local storage to the ES5 version. To my knowledge, there is no reason to mess with ES5 other than general JS practice. I will do so if instructed but at this point of I'm getting plenty of extra-curricular practice.
+        Overall he did things pretty similarly. The procedure is a little different but everything works the same.
         
 */
 
@@ -174,4 +180,6 @@ document.getElementById('book-list').addEventListener('mousedown', function(e) {
     e.preventDefault();
 });
 
-Storage.loadBooks();
+document.addEventListener("DOMContentLoaded", function() {
+    Storage.loadBooks();
+});

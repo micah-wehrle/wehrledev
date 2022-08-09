@@ -1,0 +1,43 @@
+[
+    {
+        "name":"Task Manager",
+        "date":"July 31, 2022",
+        "tags":["JS Course","Local Storage"],
+        "link":"task-manager"
+    },
+    
+    {
+        "name":"Loan Calculator",
+        "date":"August 1, 2022",
+        "tags":["JS Course","Canvas"],
+        "link":"loan-calculator"
+    },
+
+    {
+        "name":"Number Guesser",
+        "date":"August 2, 2022",
+        "tags":["JS Course","Canvas"],
+        "link":"number-guesser"
+    },
+
+    {
+        "name":"Book List",
+        "date":"August 5, 2022",
+        "tags":["JS Course","Canvas"],
+        "link":"book-list"
+    },
+
+    {
+        "name":"Physics Demo",
+        "date":"August 6, 2022",
+        "tags":["Spin-off","Canvas","Custom Stylesheet"],
+        "link":"physics-demo"
+    },
+
+    {
+        "name":"Project List",
+        "date":"August 7, 2022",
+        "tags":["Spin-off","Custom Stylesheet"],
+        "link":"#"
+    }
+]
