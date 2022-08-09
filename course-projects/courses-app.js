@@ -130,7 +130,7 @@ function openProject(projNum) {
     // Open the selected project (or project passed to function) in a new window, using the url additive from the project table
     window.open(`./${projects[
             (typeof projNum === 'undefined' || projNum === -1 ? selectedRow-2 : projNum)  
-        ].link}/index.html`, '_blank');
+        ].link}/`, '_blank');
 }
 
 
