@@ -1,0 +1,81 @@
+#warning-text{
+    color:red;
+    font-size:12px;
+}
+
+#jokes-loaded {
+    font-size:12px;
+    margin-top:1px;
+    margin-left:15px;
+
+}
+
+.error-field {
+    border-color: red;
+}
+
+.header * {
+    display:inline;
+    margin-bottom:0px;
+    text-align:center;
+    vertical-align:middle;
+}
+
+.body-content {
+    padding-left: 50px;
+}
+
+.text-input {
+    font-size: 15px;
+}
+
+.btn {
+    background-color: lightgray;
+    font-size:15px;
+    border: none;
+    transition: margin-left 1000ms;
+}
+
+.btn:active {
+    color: white;
+    background-color: rgb(44, 44, 44);
+    margin-left: 30px;
+    transition: none;
+}
+
+
+.head-note {
+    margin-bottom:2px;
+}
+.side-note {
+    color:gray;
+    font-size:12px;
+    margin-top:0px;
+    margin-left:10px;
+}
+
+.sub-header {
+    margin-left:30px;
+}
+
+#joke-box {
+    margin-left: 20px;
+}
+
+.told-joke {
+    background-color: #b8b8b8;
+    color: #2d2d2d;
+    border-radius: 5px;
+    padding: 15px 25px;
+    margin-left: 0;
+    margin-bottom: 5px;
+    width:450px;
+    transition: margin-left 400ms ease-in-out, color 400ms ease-in-out, background-color 400ms ease-in-out;
+    
+}
+
+.told-joke:hover {
+    margin-left:15px;
+    color: black;
+    background-color: #e8e8e8;
+}

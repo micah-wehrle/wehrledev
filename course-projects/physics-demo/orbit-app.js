@@ -113,11 +113,15 @@ class Body {
             const newY = this.y + this.velY;
 
             for(let i = 0; i < bodies.length; i++) {
-                if(bodies[i] === this) {
+                let otherBod = bodies[i];
+                if(otherBod === this) {
                     continue;
                 }
 
-                if(Body.distance(newX, newY, bodies[i].x, bodies[i].y) < this.size + bodies[i].size) {
+                // There will be a collision
+                if(Body.distance(newX, newY, otherBod.x, otherBod.y) < this.size + otherBod.size) { 
+                    // let incomingNormal = normalize(this.velX, this.velY);
+
                     this.velX = -this.velX;
                     this.velY = -this.velY;
                 }
@@ -171,6 +175,11 @@ function triggerBtn(element) {
             defaultBalls();
             break;
     }
+}
+
+function normalize(x, y) {
+    let c = Math.sqrt(x*x + y*y);
+    return [x/c, y,c];
 }
 
 

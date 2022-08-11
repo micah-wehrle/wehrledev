@@ -1,6 +1,8 @@
 /*
     I made this after the js classes lessons (though I didn't use any classes in here) in order to organize and display the projects I've made for any courses I take.
         I also added 'Spin-off' tags for the projects (like this one) not assigned as homework for the courses.
+
+    I've just begun watching the very next seciton of the JS course, where I'm learning about how I could hypothetically access a JSON file using 
     
 */
 
@@ -141,7 +143,10 @@ const tagJS = "JS Course",
     tagLocStg = "Local Storage",
     tagCanvas = "Canvas",
     tagSpinoff = "Spin-off",
-    tagCustCSS = "Custom Stylesheet";
+    tagCustCSS = "Robust Stylesheet",
+    tagAjax = "Ajax",
+    tagWIP = "WIP"
+;
 
 const projects = [
     {
@@ -179,7 +184,7 @@ const projects = [
     {
         "name":"Physics Demo",
         "date":"August 6, 2022",
-        "tags":[tagSpinoff,tagCanvas,tagCustCSS],
+        "tags":[tagSpinoff,tagCanvas,tagCustCSS,tagWIP],
         "link":"physics-demo",
         "about":"My first spin-off project which was not assigned by any course. I wanted to play around with classes a little more, so I made a simple physics simulation with a canvas, and managed the moving bodies with classes. I also learned a lot of html and css with this project, as it was the first where I made my own custom stylesheet for the buttons. It needs a lot of work, so I will improve it as I am able."
     },
@@ -192,13 +197,24 @@ const projects = [
         "about":"My second spin-off project and also a sort of culmination of everything learned so far. I decided to have one page that had links to all the projects I've made so far, and this is what I settled on. I didn't want to go too overkill and show off a little sample any of the projects here, the point is just to be a jump point to quickly see all the projects and view any at a click. It was fun to add tags and create the code to manage all of that. I learned a lot about html and css in this project as well, and will continue to add projects to it as they are made. I hope for this page to persist through my entire web development journey."
     },
 
-    // {
-    //     "name":"Test",
-    //     "date":"September 30, 2022",
-    //     "tags":["Just for testing"],
-    //     "link":"#",
-    //     "about":"Test"
+    {
+        "name":"Joke Generator",
+        "date":"August 8, 2022",
+        "tags":[tagJS, tagCanvas, tagAjax],
+        "link":"joke-generator",
+        "about":"Snap back to reality, made a few fun projects and now I need to get back to course work. This is my fifth Udemy JS project."
+    },
+
+    // { // Consider how early this project is in development, I'm excluding it from the main list for now
+    //     "name":"Canvas Builder",
+    //     "date":"August 11, 2022",
+    //     "tags":[tagSpinoff, tagCanvas, tagWIP],
+    //     "link":"canvas-builder",
+    //     "about":"After getting the cowboy hat together in the Joke Generator project, I realized it would be nice to have a tool to create better canvas art, specifically in relation to lines and curves. Without such a tool, you are stuck with an irritating and inefficent guess and check process."
     // },
+
+
+
 
     // {
     //     "name":"",

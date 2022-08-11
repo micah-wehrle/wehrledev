@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="joke-style.css">
+    <title>Joke Generator</title>
+</head>
+<body>
+    <div class="header">
+        <canvas id="canvas" width="100" height="100"></canvas>
+        <h1>Chuck Norris Joke Generator</h1>
+    </div>
+    <div class="sub-header">
+        <p class="head-note">Created using ICNDb.com</p>
+        <p class="side-note">(The Internet Chuck Norris Database)</p>
+    </div>
+    <hr>
+    <div class="body-content">
+        <div class="form-box">
+            <h3>Number of jokes to load:</h3>
+            <form id="joke-form">
+                <input type="number" value=1 class="text-input">
+                <input type="submit" value="Round-house kick" class="btn">
+            </form>
+            <div id="warning-text" style="visibility:hidden">Please input a number between 1 and 10.</div>
+            <div id="jokes-loaded">Jokes loaded: 0</div>
+            <br><br>
+        </div>
+        <div id="joke-box"></div>
+    </div>
+
+    <script src="joke-app.js"></script>
+</body>
+</html>
