@@ -1,2 +1,7 @@
 private/
 .DS_Store
+.angular/
+.vscode/
+node_modules/
+e2e/
+home/
