@@ -1,0 +1,6 @@
+.button-box {
+    padding: 10px 10px;
+}
+.button-box * {
+    margin: 5px 5px;
+}

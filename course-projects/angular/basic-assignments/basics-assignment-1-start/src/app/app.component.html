@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3>My first project</h3>
+      <p>Let me just say that this project was a major pain to get started. I am not sure if it is the age of the original project folder, or the fact that I'm using a mac (probably a combination of both), this was very difficult. I barely managed to get it to work. I had to create a new app, import the files, and then for some reason my npm install didn't include the bootstrap node module, so I had to copy the folder from my first app. All good now I guess. Here you go:</p>
+      <hr>
+      <h4>Are you a cool dude?</h4>
+      <div style="display:inline-block" class="button-box">
+        <button type="button" class="btn btn-success" onclick="document.getElementById('success-box').hidden=false; document.getElementById('warning-box').hidden=true;">Yes</button>
+        <button type="button" class="btn btn-danger" onclick="document.getElementById('warning-box').hidden=false; document.getElementById('success-box').hidden=true;">No</button>
+      </div>
+      <div id="success-box" hidden><app-success-alert></app-success-alert></div>
+      <div id="warning-box" hidden><app-warning-alert></app-warning-alert></div>
+      <br>
+      <br>
+      <p>I am aware this is a pretty janky way to do this. Knowing like 0.1% of angular this was the best I could think of. I tried writing code in the ts file but couldn't figure it out.</p>
+    </div>
+  </div>
+</div>
+
