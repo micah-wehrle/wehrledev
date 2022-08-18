@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser'; 
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ServerComponent } from './server/server.component';
@@ -12,7 +13,8 @@ import { ServersComponent } from './servers/servers.component';
     ServersComponent
   ],
   imports: [ // Add other modules into this module
-    BrowserModule 
+    BrowserModule ,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent] // Stuff that angular needs to know when it analyzes index.html (ie have this component ready when you go through the index.html, so you can replace <app-root> with instructions from here)

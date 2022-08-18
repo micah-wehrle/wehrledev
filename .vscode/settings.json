@@ -2,5 +2,6 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "/Users/micahwehrle/Downloads/json-20220320.jar"
-    ]
+    ],
+    "angular.enable-strict-mode-prompt": false
 }

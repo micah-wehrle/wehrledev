@@ -1,0 +1,6 @@
+<div style="display:block">
+  <label>What's ya name?</label><br>
+  <input type="text" [(ngModel)]="userName" (input)="checkLength()">
+  <p>{{ (userName.length > 0 ? 'Your name is ' + userName +'?' : 'Get typin\'') }}</p>
+  <button (click)="clearName()" [disabled]="!buttonEnabled">Forget that!</button>
+</div>
