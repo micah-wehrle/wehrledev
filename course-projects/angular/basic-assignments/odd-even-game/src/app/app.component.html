@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3>Odd Even "Game"</h3>
+      <app-game-control (currentNumber)="addNumber($event)"></app-game-control>
+      <hr>
+      <div class="row">
+        <div class="col-xs-6">
+          <h4>Odd Numbers:</h4>
+          <app-odd *ngFor="let curNum of oddNumbers" [num]="curNum"></app-odd>
+        </div>
+        <div class="col-xs-6">
+          <h4>Even Numbers:</h4>
+          <app-even *ngFor="let curNum of evenNumbers" [num]="curNum"></app-even>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

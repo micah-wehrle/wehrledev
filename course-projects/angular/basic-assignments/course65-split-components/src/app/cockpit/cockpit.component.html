@@ -1,0 +1,11 @@
+<div class="col-xs-5">
+  <h5>Add new Servers and/or Blueprints</h5>
+  <hr>
+  <label>Name of Server</label>
+  <input type="text" class="form-control" [(ngModel)]="serverName">
+  <label>What goes in 'der</label>
+  <input type="text" class="form-control" [(ngModel)]="serverContent">
+  <br>
+  <button class="btn btn-primary" (click)="addServer('server')">Add Server</button>
+  <button class="btn btn-primary" (click)="addServer('blueprint')">Add Blueprint</button>
+</div>

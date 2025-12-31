@@ -1,0 +1,20 @@
+<div class="container">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a href="#" class="navbar-brand">Course Video 65 Mini-Project</a>
+      </div>
+    </div>
+  </nav>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-cockpit (serverCreated)="onServerCreated($event)"></app-cockpit>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-server-display *ngFor="let server of servers" [contentToDisplay]="server"></app-server-display>
+    </div>
+  </div>
+</div>  

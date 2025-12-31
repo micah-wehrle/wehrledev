@@ -9,6 +9,17 @@ import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.com
 import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
+import { UnlessDirective } from './shared/directives/unless.directive';
+import { FormsModule } from '@angular/forms';
+import { DropdownDirective } from './shared/directives/dropdown.directive';
+import { HomepageComponent } from './homepage/homepage.component';
+import { Route, RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+import { RecipeBlankComponent } from './recipes/recipe-blank/recipe-blank.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { RecipeUndefinedComponent } from './recipes/recipe-undefined/recipe-undefined.component';
+
+
 
 @NgModule({
   declarations: [
@@ -19,10 +30,18 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
     RecipeDetailComponent,
     RecipeItemComponent,
     ShoppingListComponent,
-    ShoppingEditComponent
+    ShoppingEditComponent,
+    UnlessDirective,
+    DropdownDirective,
+    HomepageComponent,
+    RecipeBlankComponent,
+    RecipeEditComponent,
+    RecipeUndefinedComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

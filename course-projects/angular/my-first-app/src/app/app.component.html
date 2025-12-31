@@ -4,6 +4,11 @@
             <h3>I'm in the AppComponent</h3>
             <hr>
             <app-servers></app-servers>
+            <hr>
+            <h4>Active Users</h4>
+            <app-users *ngFor="let user of activeUsersPointer" style="color:black;" [isUserActive]="true" [userName]="user"></app-users>
+            <h4>Inactive Users</h4>
+            <app-users *ngFor="let user of inactiveUsersPointer" style="color:black;" [isUserActive]="false" [userName]="user"></app-users>
         </div>
     </div>
 </div>
